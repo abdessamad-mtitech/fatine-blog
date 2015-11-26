@@ -1,0 +1,30 @@
+
+<section  class="container container-website col-lg-10 col-lg-offset-1">
+	<div class="black-box col-lg-10 col-lg-offset-1">
+		<div class="rub">
+			<h3 class="col-lg-12 title-rub">PHOTOS | REVUES</h3>
+		</div>
+	</div>
+
+	<div class="col-lg-10 col-lg-offset-1" style="padding: 0px; margin-bottom: 60px;">
+    	<!-- revue -->
+    	<span class="col-lg-4 col-md-4 col-xs-4"><img class="pics" data-glisse-big="images/revue/fatine_01.jpg" src="images/revue/fatine_miniature_01.jpg" rel="group1"/></span>
+    	<span class="col-lg-4 col-md-4 col-xs-4"><img class="pics" data-glisse-big="images/revue/fatine_02.jpg" src="images/revue/fatine_miniature_02.jpg" rel="group1"/></span>
+    	<span class="col-lg-4 col-md-4 col-xs-4"><img class="pics" data-glisse-big="images/revue/fatine_03.jpg" src="images/revue/fatine_miniature_03.jpg" rel="group1"/></span>    	
+	</div>
+	<!-- <div class="ref-item col-lg-4 col-md-6 <?= $ref['cat'] ?>">
+						        <a href="references/detail/id/<?= $ref['pid'] ?>"><div class="article"><img width="100%" height="266px" src="<?= $ref['img'] ?>" /></div>
+							    <h5><?= $ref['title'] ?></h5></a>
+						      	<h6 style="text-align: justify;"><?= $ref['cat'] ?></h6>
+			        		</div> -->
+	<script>
+		$(function () {
+		    $('.pics').glisse({
+		        changeSpeed: 550, 
+		        speed: 500,
+		        effect:'fadeBig',
+		        fullscreen: false
+		    }); 
+		});
+	</script>
+</section>
