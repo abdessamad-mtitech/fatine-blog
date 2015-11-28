@@ -95,6 +95,8 @@ body {
 }
 
 .pics { cursor: pointer !important; margin-bottom: 20px; width: 100%;}
+
+.valider {margin-left: 0px;}
 /*.navbar-default .navbar-nav > li > a {
     color: #999;
     font-weight: bold;
@@ -255,7 +257,7 @@ section.container-slide {width: 84%;}
     font-size: 12px;
 }*/
 .copyright {
-    margin-top: 270px;
+    margin-top: -270px;
 }
 /*
 .footer-style div.container {
@@ -610,7 +612,7 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
 #cycle { margin: 0; padding: 0; width: 500px; height: 333px; padding: 3px; background: #eee; -moz-box-shadow: 0 0 2px #000; -webkit-box-shadow: 0 0 2px #000;}
 #cycle li { position: relative; list-style: none; margin: 0; padding: 3px; width: 500px; height: 333px; overflow: hidden; }
 #cycle li div { position: absolute; bottom: 3px; left: 3px; padding: 3px; width: 494px; background: black; color: white; font-size: 12px; opacity: .8; }
-
+ div#form-style {width: 89%; margin-left: 62px;  margin-top: 20px;}
 .form-contact p {
   font-family: 'BebasNeue';
   font-size: 20px;
@@ -728,8 +730,6 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
 
 @media screen and (max-width: 640px) {
   #images .owl-item img {
-    margin-top: 46%;
-    width: 190px;
   }
 
   #slider {
@@ -778,10 +778,33 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
 */
 
 
-/*
-@media only screen and (width: 1024px) {  
 
-    .right-col iframe { height: 600px; margin-top: 20px;}
+@media only screen and (width: 1024px) {  
+  .navigation{display:none;}
+
+  div#div-title { margin: 0 auto; width: auto;}
+  div.logo-title { text-align:center; margin: 0 auto;  margin-bottom: -48px; width:100%;}
+
+  div.logo-title a { font-size: 80px;}
+
+  div#mycarousel {
+      margin-right: -1px;
+      margin-left: -1px;
+  }
+
+  #main-menu {margin-left: 132px;}
+
+  .copyright { margin-top: 0px;}
+  .copyright p { font-size: 24px; text-align: center;}
+
+  section.container-slide {width: 97%;}
+
+  .Rsocial h3 {
+    padding-right: 0px;
+    font-size: 21px; }
+
+  .valider { margin-left: 0;}
+    /*.right-col iframe { height: 600px; margin-top: 20px;}
 
     .form-newsletter span:nth-child(1) { text-align: left; margin-bottom: 10px; font-size: 20px;}
     .form-newsletter #email { width: 100%; margin-bottom: 10px;}
@@ -799,20 +822,29 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
       margin-left: -15px;
       margin-top: -16px;}
 
-    input#submit { margin-left: -30px; }
+    input#submit { margin-left: -30px; }*/
 }
     
-*/
+
 @media screen and (max-width: 640px) {
   body {
     padding-top: 0px;
   }
   div#div-title { margin: 0 auto; width: auto;}
-  div.logo-title { width: 100%; margin: 0 auto;  margin-bottom: -48px;}
+  div.logo-title { text-align:center; margin: 0 auto;  margin-bottom: -48px; width:100%;}
 
-  div.logo-title a { font-size: 42px ;}
+  div.logo-title a { font-size: 42px;}
 
+  div#mycarousel {
+      margin-left: -15px;
+      margin-right: -15px;
+  }
 
+  .carousel-control.right { margin-right: 0px;} 
+
+  .navigation{display:none;}
+
+  .sub-menu {padding-left: 20px;}
   .navbar-default { margin-top: 20px;}
   .navbar-header button { margin-top: 46px;}
 
@@ -822,6 +854,16 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
   .navbar-default .navbar-toggle .icon-bar:hover { background-color: #ffe55e;}
 
   .navbar-default .navbar-toggle .icon-bar { width: 100%;}
+
+  #images .owl-stage-outer {margin-bottom: -36px; }
+
+  .copyright { margin-top: 0px;}
+  .copyright p { font-size: 16px; text-align: center;}
+
+  .Rsocial h3 {
+    padding-right: 0px;
+    font-size: 21px; }
+
 
   /*.refs div.article {
     height: 200px;
@@ -885,6 +927,12 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
   #navbar li a:hover { color: #ffe55e; }
 
   section.container-slide {width: 100%;}
+
+
+  div#form-style {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 0px;}
  /* .carousel {
       display: none;
   }
