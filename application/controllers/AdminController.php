@@ -18,42 +18,93 @@ class AdminController extends Zend_Controller_Action
 		} 
 
 		$errmsg = "";
-        $mysqli = new mysqli('127.0.0.1', 'root', '', 'posts');
+        $mysqli = new mysqli('127.0.0.1', 'root', '', 'fatine');
 		if (!$mysqli ) {
 		        $errmsg = "Cannot connect to database";
 		        }
 
 		if (isset($_POST["completed"]) && $_POST["completed"] == 1) {
-			$name = $_FILES['imagefile']['name'];
-			//move_uploaded_file($name, $directory);
-			$instr = fopen($_FILES['imagefile']['tmp_name'] ,"rb");
-			$image = addslashes(fread($instr, filesize($_FILES['imagefile']['tmp_name'])));
-		
-			$mysqli->query('insert into pix (title, categ, description, imagedata) values ("' .$_POST['title']. '", "' .$_POST['cat']. '", "' .$_POST['desc']. '", "' .$image. '")');
+
+			switch ($_POST["type"]) {
+				case 'music':
+					$name = $_FILES['cover']['name'];
+					$instr = fopen($_FILES['cover']['tmp_name'] ,"rb");
+					$image = addslashes(fread($instr, filesize($_FILES['cover']['tmp_name'])));
+				
+					$mysqli->query('insert into music (cover, title, link) values ("' .$image. '", "' .$_POST['title']. '", "' .$_POST['soundcloud']. '")');
+					break;
+				case 'videos':
+					$mysqli->query('insert into videos (link) values ("' .$_POST['youtube']. '")');
+					break;
+				case 'gallery':
+					$name = $_FILES['img']['name'];
+					$instr = fopen($_FILES['img']['tmp_name'] ,"rb");
+					$image = addslashes(fread($instr, filesize($_FILES['img']['tmp_name'])));
+				
+					$mysqli->query('insert into gallery (img, cat) values ("' .$image. '", "' .$_POST['cat']. '")');
+					break;
+				
+				default:
+					# code...
+					break;
+			}
+
+			
 		}
 
-
-		$result = $mysqli->query("select * from pix order by pid desc");
-		$references = array();
+		// MUSIC
+		$result = $mysqli->query("select * from music order by id desc");
+		$music = array();
 		while ($row = $result->fetch_assoc()) {
-			$pid = $row['pid'];
-			$title = htmlspecialchars($row['title']);
-			$desc = htmlspecialchars($row['description']);
-			$cat  = htmlspecialchars($row['categ']);
-			$bytes = $row['imagedata'];
-			$img = '<img width="200px" src="data:image/jpeg;base64,' .base64_encode($bytes). '" />';
+			$id = $row['id'];
+			$title       = htmlspecialchars($row['title']);
+			$cover       = $row['cover'];
+			$soundcloud  = htmlspecialchars($row['link']);
+
+			$img = 'data:image/jpeg;base64,' .base64_encode($cover);
 			
-			$references[$pid]['title'] = $title;
-			$references[$pid]['desc']  = $desc;
-			$references[$pid]['cat']   = $cat;
-			$references[$pid]['img'] = 'data:image/jpeg;base64,' .base64_encode($bytes);
+			$music[$id]['id']     = $id;
+			$music[$id]['title']  = $title;
+			$music[$id]['cover']  = $img;
+			$music[$id]['link']   = $soundcloud;
 
 		}
 	
-		$this->view->refs = $references;
-			
-		
+		$this->view->music = $music;
 
+		// VIDEOS
+		$result = $mysqli->query("select * from videos order by id desc");
+		$videos = array();
+		while ($row = $result->fetch_assoc()) {
+			$id = $row['id'];
+			$title       = htmlspecialchars($row['link']);
+
+			$videos[$id]['id']     = $id;
+			$videos[$id]['link']   = $title;
+
+		}
+	
+		$this->view->videos = $videos;
+
+
+		// GALLERY
+		$result = $mysqli->query("select * from gallery order by id desc");
+		$gallery = array();
+		while ($row = $result->fetch_assoc()) {
+			$id       = $row['id'];
+			$img      = $row['img'];
+			$cat      = htmlspecialchars($row['cat']);
+
+			$img = 'data:image/jpeg;base64,' .base64_encode($img);
+			
+			$gallery[$id]['id']     = $id;
+			$gallery[$id]['img']    = $img;
+			$gallery[$id]['cat']    = $cat;
+
+		}
+	
+		$this->view->gallery = $gallery;
+		
     }
 
     public function removeAction() {

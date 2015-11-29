@@ -21,7 +21,7 @@ h3 .title-back {
 }
 
 h3 .title-back span {
-  border-top: 6px solid #de156c;
+  border-top: 6px solid #d14e3d;
   margin-top: -4px;
   width: 60%;
   display: inline-block;
@@ -30,7 +30,7 @@ h3 .title-back span {
 h3 .title {
   padding: 0px 30px;
   display: inline-block;
-  background: #fff;
+  background: #000;
   margin-top: -16px;
 }
 
@@ -38,7 +38,7 @@ h3 .title {
   content: '';
   display: inline-block;
   width: 20px;
-  border: 3px solid #de156c;
+  border: 3px solid #d14e3d;
   margin-top: 16px;
   position: absolute;
   margin-left: 14px;
@@ -51,7 +51,7 @@ h3 .title {
   content: '';
   display: inline-block;
   width: 20px;
-  border: 3px solid #de156c;
+  border: 3px solid #d14e3d;
   margin-top: 4px;
   position: absolute;
   margin-left: -34px;

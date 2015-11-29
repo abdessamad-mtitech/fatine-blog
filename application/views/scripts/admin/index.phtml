@@ -1,6 +1,189 @@
+
 <section  class="container container-website">
-		<div class="container marketing"><img src="images/shadow.png" width="95%"></div>
-		<div class="container marketing box-white">
+		<!-- <div class="container marketing"><img src="images/shadow.png" width="95%"></div> -->
+		<div class="col-lg-12">
+			<ul class="admintabs nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active"><a href="#music" aria-controls="music" role="tab" data-toggle="tab">Musique</a></li>
+			    <li role="presentation"><a href="#videos" aria-controls="videos" role="tab" data-toggle="tab">Videos</a></li>
+			    <li role="presentation"><a href="#gallery" aria-controls="gallery" role="tab" data-toggle="tab">Gallery</a></li>
+			</ul>
+		</div>
+
+		<style>	
+			table.financial {
+				width: 100%;
+				color: #fff;
+			}
+			
+			.financial th, .financial td {
+				padding: 7px 10px 10px 10px;
+			}
+
+			.financial th {
+				text-transform: uppercase;
+				letter-spacing: 0.1em;
+				font-size: 90%;
+				border-bottom: 2px solid #111111;
+				border-top: 1px solid #999;
+				text-align: left;
+			}
+
+			.financial tr.even {
+				background-color: #efefef;
+			}
+
+			.financial tr:hover {
+				background-color: #c3e6e5;
+			}
+
+			.financial tfoot td {
+				border-top: 2px solid #111111;
+				border-bottom: 1px solid #999;
+			}
+
+			.money {
+				text-align: right;
+			}
+		</style>
+
+		<div class="tab-content col-lg-12">
+		    <div role="tabpanel" class="tab-pane fade in active" id="music">
+		    	<form id="music-form" class="col-lg-12 form-contact" enctype="multipart/form-data" method="post" style="margin-top: 30px;">
+					<span class="col-lg-12"><input type="hidden" name="completed" value="1"></span>
+					<span class="col-lg-12"><input type="hidden" name="type" value="music"></span>
+					<p class="col-lg-12">Album Cover</p>
+					<span class="col-lg-12"><input type="file" name="cover" value=""></span>
+					<p class="col-lg-12">Titre</p>
+					<span class="col-lg-12"><input name="title" value="Titre"></span>
+					<p class="col-lg-12">Lien Soundcloud</p>
+					<span class="col-lg-12"><input name="soundcloud" value="Lien Soundcloud"></span>
+					
+					<span class="col-lg-12"><span class="col-lg-4  col-md-4 col-lg-offset-4 col-md-offset-4"><input type="submit" id="submit" value="Ajouter"></span></span>
+				</form>	
+				<br>
+				<hr>
+				<br>
+				<div class="col-lg-12">
+					<table class="financial">
+						<thead>
+			    	    	<tr>
+								<th>Titre</th>
+								<th>Cover</th>
+								<th>Soundcloud</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+
+						<?php foreach ($this->music as $key => $ms) { ?>
+				
+							<tr>
+								<td class="col-lg-3">
+									<h5><?= $ms['title'] ?></h5>
+								</td>
+								<td class="col-lg-4">
+									<img width="100px" src="<?= $ms['cover'] ?>" />
+								</td>
+								<td class="col-lg-3">
+									<p style="word-break: break-all;"><?= $ms['link'] ?></p>
+								</td>
+								<td class="col-lg-2">
+									<button  class="remove <?= $ms['cat'] ?>" id="<?= $ms['id'] ?>" type="music">Supprimer</button>
+								</td>		
+							</tr>
+					
+						<?php } ?>
+					</table>
+				</div>
+		    </div>
+		    <div role="tabpanel" class="tab-pane fade in" id="videos">
+		    	<form id="videos-form" class="col-lg-12 form-contact" enctype="multipart/form-data" method="post" style="margin-top: 30px;">
+					<span class="col-lg-12"><input type="hidden" name="completed" value="1"></span>
+					<span class="col-lg-12"><input type="hidden" name="type" value="videos"></span>
+					<p class="col-lg-12">Lien Youtube</p>
+					<span class="col-lg-12"><input name="youtube" value="Lien Youtube"></span>
+					
+					<span class="col-lg-12"><span class="col-lg-4  col-md-4 col-lg-offset-4 col-md-offset-4"><input type="submit" id="submit" value="Ajouter"></span></span>
+				</form>	
+				<br>
+				<hr>
+				<br>
+				<div class="col-lg-12">
+					<table class="financial">
+						<thead>
+			    	    	<tr>
+								<th>Link</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+
+						<?php foreach ($this->videos as $key => $ms) { ?>
+				
+							<tr>
+								<td class="col-lg-3">
+									<p style="word-break: break-all;"><?= $ms['link'] ?></p>
+								</td>
+								<td class="col-lg-2">
+									<button  class="remove <?= $ms['cat'] ?>" id="<?= $ms['id'] ?>" type="videos">Supprimer</button>
+								</td>		
+							</tr>
+					
+						<?php } ?>
+					</table>
+				</div>
+			</div>
+		    <div role="tabpanel" class="tab-pane fade in" id="gallery">
+		    	<form id="gallery-form" class="col-lg-12 form-contact" enctype="multipart/form-data" method="post" style="margin-top: 30px;">
+					<span class="col-lg-12"><input type="hidden" name="completed" value="1"></span>
+					<span class="col-lg-12"><input type="hidden" name="type" value="gallery"></span>
+					<p class="col-lg-12">Image</p>
+					<span class="col-lg-12"><input type="file" name="img" value=""></span>
+					<p class="col-lg-12">Catégorie</p>
+					<span class="col-lg-12"><input name="cat" value="Catégorie"></span>
+					
+					<span class="col-lg-12"><span class="col-lg-4  col-md-4 col-lg-offset-4 col-md-offset-4"><input type="submit" id="submit" value="Ajouter"></span></span>
+				</form>
+				<br>
+				<hr>
+				<br>
+				<div class="col-lg-12">
+					<table class="financial">
+						<thead>
+			    	    	<tr>
+								<th>Link</th>
+								<th>Catégorie</th>
+								<th></th>
+							</tr>
+						</thead>
+						<tbody>
+
+						<?php foreach ($this->gallery as $key => $ms) { ?>
+							<tr>
+								<td class="col-lg-4">
+									<img width="100px" src="<?= $ms['img'] ?>"  
+								</td>
+								<td class="col-lg-3">
+									<h5><?= $ms['cat'] ?></h5>
+								</td>
+								<td class="col-lg-2">
+									<button  class="remove" id="<?= $ms['id'] ?>" type="gallery">Supprimer</button>
+								</td>		
+							</tr>
+					
+						<?php } ?>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			$('.admintabs a').click(function (e) {
+			  e.preventDefault()
+			  $(this).tab('show')
+			});
+		</script>
+		<!-- <div class="container marketing box-white">
 			<div class="row ligne">
 				<form id="contact-form" class="col-lg-12 form-contact" enctype="multipart/form-data" method="post" style="margin-top: 30px;">
 					<span class="col-lg-12"><input type="hidden" name="completed" value="1"></span>
@@ -96,6 +279,6 @@
 			<div class="col-lg-12">
 				<a href="admin/logout">Se déconnecter</a>
 			</div>
-		</div>
+		</div> -->
 </section>
 
