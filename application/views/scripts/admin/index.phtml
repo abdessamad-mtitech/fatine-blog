@@ -32,8 +32,8 @@
 				background-color: #efefef;
 			}
 
-			.financial tr:hover {
-				background-color: #c3e6e5;
+			.financial tbody tr:hover {
+				background-color: #d14e3d;
 			}
 
 			.financial tfoot td {
@@ -280,5 +280,25 @@
 				<a href="admin/logout">Se déconnecter</a>
 			</div>
 		</div> -->
+
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.remove').click(function() {
+					var self = $(this);
+					$.ajax({
+						url : 'admin/remove',
+						method: 'POST',
+						data : { id : $(this).attr('id'), type : $(this).attr('type') },
+						success: function (reponse) {
+							// body...
+							self.closest('tr').slideUp(200);
+							alert('removed successfully');
+						}
+					});
+				});
+			});
+
+		</script>
 </section>
 

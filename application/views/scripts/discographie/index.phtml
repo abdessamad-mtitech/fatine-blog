@@ -10,7 +10,18 @@
 	</div>
 	<div class="col-lg-10 col-lg-offset-1 " style="padding: 0px; margin-bottom: 60px;">
     	<div class="grid music">
+    		<?php foreach ($this->music as $key => $ms) { ?>
 			<figure class="effect-layla col-lg-4 col-md-4">
+				<img src="<?= $ms['cover'] ?>" alt="img01"/>
+				<figcaption>
+					<h2><?= str_replace(' ', '&nbsp;&nbsp;&nbsp;<span>', str_replace('_', '<br>', $ms['title'])) ?></span></h2>
+					<p>EN SAVOIR PLUS</p>
+					<a class="more" link="<?= $ms['link'] ?>">View more</a>
+				</figcaption>			
+			</figure>
+			<?php } ?>
+
+			<!-- <figure class="effect-layla col-lg-4 col-md-4">
 				<img src="imgs/img1.jpg" alt="img01"/>
 				<figcaption>
 					<h2>SAD &nbsp;<span>LBAB</span></h2>
@@ -35,7 +46,7 @@
 					<p>EN SAVOIR PLUS</p>
 					<a class="more" link="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/223671205&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true">View more</a>
 				</figcaption>			
-			</figure>
+			</figure> -->
 		</div>	
 	</div>
 	
@@ -163,8 +174,6 @@
 		    height: 50%;
 		}
 
-		
-
 		.grid figure p {
 			letter-spacing: 1px;
 			/*font-size: 70%;*/
@@ -231,6 +240,10 @@
 			transition: transform 0.35s;
 		}
 
+		figure.effect-layla:hover h2 {
+			background: none !important;	
+		}
+
 		figure.effect-layla p {
 			padding: 0.5em 2em;
 			text-transform: none;
@@ -254,7 +267,7 @@
 		}
 
 		figure.effect-layla:hover figcaption {
-			background: rgba(255, 0, 0, 0.7);
+			background: rgba(255, 0, 0, 0.6);
 		}
 
 		figure.effect-layla:hover img {

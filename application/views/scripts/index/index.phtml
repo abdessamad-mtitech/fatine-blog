@@ -66,10 +66,12 @@
 <section  class="container container-website col-lg-10 col-lg-offset-1" style="padding: 0px; margin-top:0px;">
 	<div id="slider" class="col-lg-12" style="margin-bottom: 60px;">
 		<div class="owl-carousel-video">
-		    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=bPsBRsC2s0M"></a></div>
-		    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=mB1sZAnP_MA"></a></div>
+		    <?php foreach ($this->videos as $key => $ms) { ?>
+		    <div class="item-video" data-merge="3"><a class="owl-video" href="<?= $ms['link'] ?>"></a></div>
+		    <?php } ?>
+		    <!-- <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=mB1sZAnP_MA"></a></div>
 		    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=nY0BWzD04Rs"></a></div>
-		    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=jstyG45zFEw"></a></div>
+		    <div class="item-video" data-merge="3"><a class="owl-video" href="https://www.youtube.com/watch?v=jstyG45zFEw"></a></div> -->
 		</div>
 		<div class="navigation vid"></div>
 	</div>

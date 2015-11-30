@@ -109,24 +109,37 @@ class AdminController extends Zend_Controller_Action
 
     public function removeAction() {
        $errmsg = "";
-       $mysqli = new mysqli('127.0.0.1', 'root', '', 'posts');
+       $mysqli = new mysqli('127.0.0.1', 'root', '', 'fatine');
 		if (!$mysqli ) {
 	        $errmsg = "Cannot connect to database";
 	    }
 
-	    $pid = $_POST['pid'];
+	    $id  = $_POST['id'];
+	    $type = $_POST['type'];
 
-	    $mysqli->query('DELETE FROM pix where pid=' . $pid);
-
-
+	    switch ($type) {
+	    	case 'music':
+	    		$mysqli->query("DELETE FROM music where id=" . $id);
+	    		break;
+	    	case 'videos':
+	    		$mysqli->query("DELETE FROM videos where id=" . $id);
+	    		break;
+	    	case 'gallery':
+	    		$mysqli->query("DELETE FROM gallery where id=" . $id);
+	    		break;
+	    	default:
+	    		
+	    		break;
+	    }
+	    
     	die();
     }
 
     public function logoutAction() {
-     session_start();
-     unset($_SESSION['1511c2t0l1s5']);
-      header("Location: /projects/catalysisEvents/public/login"); 
+    	session_start();
+    	unset($_SESSION['1511c2t0l1s5']);
+      	header("Location: /projects/catalysisEvents/public/login"); 
 
-      die();
+      	die();
     }
 }

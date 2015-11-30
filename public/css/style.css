@@ -338,13 +338,11 @@ ol, ul {
 }
 
 #main-menu {
-
   font-size: 0;
   margin: 10px auto;
   margin-bottom: -8px;
   text-transform: uppercase;
   color: #fff;
-
 }
 
 #main-menu > li {
