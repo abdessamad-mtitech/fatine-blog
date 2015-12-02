@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     $('.owl-carousel-images').owlCarousel({
         items:1,
         merge:true,
@@ -25,7 +26,7 @@ $(document).ready(function () {
         merge:true,
         loop:true,
         video:true,
-        lazyLoad:true,
+        lazyLoad:false,
         center:true,
         dots: false,
         responsive:{
@@ -41,7 +42,6 @@ $(document).ready(function () {
         navText: ["",""],
         navContainer: ".vid.navigation"
     });
-
 
     // $('.owl-item.active.center').prev().prev().css('opacity','0');
     // $('.owl-item.active.center').next().next().css('opacity','0');

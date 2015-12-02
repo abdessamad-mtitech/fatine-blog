@@ -86,12 +86,17 @@
 		</div>
 	</div>
 	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="padding: 0px; margin-bottom: 60px;">
-    	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album1.jpg" data-glisse-big="images/album1.jpg" rel="group1"/></span>
+		<?php 
+			foreach ($this->gallery as $key => $ms) { ?>
+			<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="<?= $ms['thumb'] ?>" data-glisse-big="<?= $ms['img'] ?>" rel="group1"/></span>
+			
+		<?php } ?>
+    	<!-- <span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album1.jpg" data-glisse-big="images/album1.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album2.jpg" data-glisse-big="images/album2.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album3.jpg" data-glisse-big="images/album3.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album4.jpg" data-glisse-big="images/album4.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album5.jpg" data-glisse-big="images/album5.jpg" rel="group1"/></span>
-    	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album6.jpg" data-glisse-big="images/album6.jpg" rel="group1"/></span>
+    	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" src="images/album6.jpg" data-glisse-big="images/album6.jpg" rel="group1"/></span> -->
 	</div>
 	<script>
 		$(function () {
