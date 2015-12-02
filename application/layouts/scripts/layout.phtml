@@ -41,41 +41,43 @@
 	<header>
 		<nav class="col-lg-10 col-lg-offset-1 navbar navbar-default modif1">
 	      <div class="container" id="div-title" style="">
-	        <div class="logo-title">
-	        	<a href="/projects/fatine-blog/public/"><span style="font-family: BebasNeue;">FATINE BENAGUIDA</span></a>
-	        </div>
-	        <div class="navbar-header">
-	          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-	            <span class="sr-only">Toggle navigation</span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	            <span class="icon-bar"></span>
-	          </button> 
-	        </div>
-	        <div id="navbar" class="navbar-collapse collapse-in collapse">
-	            <ul id="main-menu" class="nav navbar-nav " >
-					<li class="<?= $this->home ?>"><a href="/projects/fatine-blog/public/">Accueil</a></li>
-					<li class="<?= $this->about ?>"><a href="about">Biographie</a></li>
-					<li class="<?= $this->discographie ?>"><a href="discographie">Discographie</a></li>
-					<li class="parent <?= $this->galerie ?>">
-						<a href="#">Galerie</a>
-						<ul class="sub-menu">
-							<li>
-								<a class="parent"><i class="icon-file-alt"></i>Photos</a>
-								<ul class="sub-menu">
-									<li><a href="radios">TV & Radios</a></li>
-									<li><a href="festivals">Festivals</a></li>
-									<li><a href="revues">Revues de presse</a></li>
-									<li><a href="divers">Divers</a></li>
-								</ul>
-							</li>
-							<li><a href="videos"><i class="icon-wrench"></i>Vidéos</a></li>
-						</ul>
-					</li>
-					<li><a href="#">ÉVÉNEMENTS</a></li>
-					<li class="<?= $this->contact ?>"><a href="contact">Contact</a></li>
-				</ul>		
-	        </div><!--/.nav-collapse -->
+	        <div class="col-lg-12">
+		        <div class="logo-title">
+		        	<a href="/projects/fatine-blog/public/"><span style="font-family: BebasNeue;">FATINE BENAGUIDA</span></a>
+		        </div>
+		        <div class="navbar-header">
+		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+		            <span class="sr-only">Toggle navigation</span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		            <span class="icon-bar"></span>
+		          </button> 
+		        </div>
+		        <div id="navbar" class="navbar-collapse collapse-in collapse col-lg-8 col-lg-offset-2">
+		            <ul id="main-menu" class="nav navbar-nav " >
+						<li class="<?= $this->home ?>"><a href="/projects/fatine-blog/public/">Accueil</a></li>
+						<li class="<?= $this->about ?>"><a href="about">Biographie</a></li>
+						<li class="<?= $this->discographie ?>"><a href="discographie">Discographie</a></li>
+						<li class="parent <?= $this->galerie ?>">
+							<a href="#">Galerie</a>
+							<ul class="sub-menu">
+								<li>
+									<a class="parent"><i class="icon-file-alt"></i>Photos</a>
+									<ul class="sub-menu">
+										<li><a href="radios">TV & Radios</a></li>
+										<li><a href="festivals">Festivals</a></li>
+										<li><a href="revues">Revues de presse</a></li>
+										<li><a href="divers">Divers</a></li>
+									</ul>
+								</li>
+								<li><a href="videos"><i class="icon-wrench"></i>Vidéos</a></li>
+							</ul>
+						</li>
+						<li><a href="#">ÉVÉNEMENTS</a></li>
+						<li class="<?= $this->contact ?>"><a href="contact">Contact</a></li>
+					</ul>		
+		        </div><!--/.nav-collapse -->
+		       </div>
 	      </div>
 	    </nav>
 	</header>

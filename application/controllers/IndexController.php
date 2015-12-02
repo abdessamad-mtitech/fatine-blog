@@ -12,7 +12,7 @@ class IndexController extends Zend_Controller_Action
     {
         $this->view->home = 'current-menu-item';
 
-        $errmsg = "";
+       $errmsg = "";
         $mysqli = new mysqli('127.0.0.1', 'root', '', 'fatine');
 		if (!$mysqli ) {
 		        $errmsg = "Cannot connect to database";

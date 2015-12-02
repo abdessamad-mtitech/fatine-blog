@@ -5,7 +5,7 @@
 
 :focus { outline: none; }
 
-div#div-title { margin: 0 auto; width: 72%;}
+div#div-title { width:100%;}
 
 h3 {
   font-family: 'BebasNeue', 'Open Sans';
@@ -94,7 +94,7 @@ body {
   background-color: #D14E3D;
 }
 
-.pics { cursor: pointer !important; margin-bottom: 20px; width: 100%;}
+ .pics { cursor: pointer !important; margin-bottom: 20px; width: 100%;}
 
 .valider {margin-left: 0px;}
 /*.navbar-default .navbar-nav > li > a {
@@ -151,7 +151,7 @@ section.container-slide {width: 84%;}
 
 /* Center align the text within the three columns below the carousel */
 /*.marketing .col-lg-4 {
-  margin-bottom: 20px;
+  margin-bottodiv#m: 20px;
   text-align: center;
 }
 .marketing h2 {
@@ -323,7 +323,7 @@ input#abonner:hover {
 /*.left-col { margin-left: 4px;}
 .right-col { margin-right: 4px;}*/
 
-div.logo-title { width: 50%; margin: 0 auto;  margin-bottom: -48px;}
+div.logo-title {margin-bottom: -48px; text-align: center;}
 
 div.logo-title a {color: #d14e3d; font-size: 62px; font-weight: bold; text-decoration: none;}
 
@@ -822,7 +822,11 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
 
     input#submit { margin-left: -30px; }*/
 }
-    
+@media only screen and (width: 2800px) {
+   
+   div#navbar { width: 32%; margin: 0 34%;}
+
+}
 
 @media screen and (max-width: 640px) {
   body {
