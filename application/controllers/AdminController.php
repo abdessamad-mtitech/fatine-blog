@@ -37,11 +37,15 @@ class AdminController extends Zend_Controller_Action
 					$mysqli->query('insert into videos (link) values ("' .$_POST['youtube']. '")');
 					break;
 				case 'gallery':
-					$name = $_FILES['img']['name'];
-					$instr = fopen($_FILES['img']['tmp_name'] ,"rb");
-					$image = addslashes(fread($instr, filesize($_FILES['img']['tmp_name'])));
-				
-					$mysqli->query('insert into gallery (img, cat) values ("' .$image. '", "' .$_POST['cat']. '")');
+					$name1 = $_FILES['img1']['name'];
+					$instr1 = fopen($_FILES['img1']['tmp_name'] ,"rb");
+					$image = addslashes(fread($instr1, filesize($_FILES['img1']['tmp_name'])));
+					
+					$name2 = $_FILES['img2']['name'];
+					$instr2 = fopen($_FILES['img2']['tmp_name'] ,"rb");
+					$thumb = addslashes(fread($instr2, filesize($_FILES['img2']['tmp_name'])));
+
+					$mysqli->query('insert into gallery (img, thumbnail, cat) values ("' .$image. '", "' .$thumb. '", "' .$_POST['cat']. '")');
 					break;
 				
 				default:

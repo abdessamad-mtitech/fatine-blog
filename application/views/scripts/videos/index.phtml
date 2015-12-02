@@ -8,8 +8,11 @@
 
 	<div class="col-lg-10 col-lg-offset-1 videos" style="padding: 0px; margin-bottom: 60px;">
 	  	<!-- Videos -->
-		<iframe width="100%" src="<?= $ref['link'] ?>" frameborder="0" allowfullscreen></iframe>
+	  	<?php foreach ($this->videos as $key => $ms) { ?>
+	  		<iframe width="100%" src="<?= str_replace('watch?v=', 'embed/', $ms['link']) ?>" frameborder="0" allowfullscreen></iframe>
+	  	<?php } ?>
+		<!-- <iframe width="100%" src="<?= $ref['link'] ?>" frameborder="0" allowfullscreen></iframe>
 		<iframe width="100%" src="https://www.youtube.com/embed/nY0BWzD04Rs" frameborder="0" allowfullscreen></iframe>
-		<iframe width="100%" src="https://www.youtube.com/embed/bPsBRsC2s0M" frameborder="0" allowfullscreen></iframe>
+		<iframe width="100%" src="https://www.youtube.com/embed/bPsBRsC2s0M" frameborder="0" allowfullscreen></iframe> -->
 	</div>
 </section>

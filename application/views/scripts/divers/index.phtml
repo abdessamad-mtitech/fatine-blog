@@ -7,7 +7,10 @@
 	</div>
 
 	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="padding: 0px; margin-bottom: 60px;">
-    	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_01.jpg" src="images/divers/divers_miniature_01.jpg" rel="group1"/></span>
+		<?php foreach ($this->gallery as $key => $ms) {  ?>
+    		<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="<?= $ms['img'] ?>" src="<?= $ms['thumb'] ?>" rel="group1"/></span>
+    	<?php } ?>
+    	<!-- <span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_01.jpg" src="images/divers/divers_miniature_01.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_02.jpg" src="images/divers/divers_miniature_02.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_03.jpg" src="images/divers/divers_miniature_03.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_04.jpg" src="images/divers/divers_miniature_04.jpg" rel="group1"/></span>
@@ -20,14 +23,14 @@
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_11.jpg" src="images/divers/divers_miniature_11.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_12.jpg" src="images/divers/divers_miniature_12.jpg" rel="group1"/></span>
     	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_13.jpg" src="images/divers/divers_miniature_13.jpg" rel="group1"/></span>
-    	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_14.jpg" src="images/divers/divers_miniature_14.jpg" rel="group1"/></span>
+    	<span class="col-lg-4 col-xs-4 col-md-4"><img class="pics" data-glisse-big="images/divers/divers_14.jpg" src="images/divers/divers_miniature_14.jpg" rel="group1"/></span> -->
     	
 	</div>
 	<!-- <div class="ref-item col-lg-4 col-md-6 <?= $ref['cat'] ?>">
-						        <a href="references/detail/id/<?= $ref['pid'] ?>"><div class="article"><img width="100%" height="266px" src="<?= $ref['img'] ?>" /></div>
-							    <h5><?= $ref['title'] ?></h5></a>
-						      	<h6 style="text-align: justify;"><?= $ref['cat'] ?></h6>
-			        		</div> -->
+        <a href="references/detail/id/<?= $ref['pid'] ?>"><div class="article"><img width="100%" height="266px" src="<?= $ref['img'] ?>" /></div>
+	    <h5><?= $ref['title'] ?></h5></a>
+      	<h6 style="text-align: justify;"><?= $ref['cat'] ?></h6>
+	</div> -->
 	<script>
 		$(function () {
 		    $('.pics').glisse({
