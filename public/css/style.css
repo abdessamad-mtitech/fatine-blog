@@ -825,6 +825,7 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
 @media only screen and (width: 2800px) {
    
    div#navbar { width: 32%; margin: 0 34%;}
+   div#slider { height: 900px;}
 
 }
 
