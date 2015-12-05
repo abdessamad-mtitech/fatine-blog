@@ -18,7 +18,7 @@ class AdminController extends Zend_Controller_Action
 		} 
 
 		$errmsg = "";
-        $mysqli = new mysqli('127.0.0.1', 'root', '', 'fatine');
+        $mysqli = new mysqli('mediatuckafatine.mysql.db', 'mediatuckafatine', 'Fatine123', 'mediatuckafatine');
 		if (!$mysqli ) {
 		        $errmsg = "Cannot connect to database";
 		        }
@@ -47,7 +47,13 @@ class AdminController extends Zend_Controller_Action
 
 					$mysqli->query('insert into gallery (img, thumbnail, cat) values ("' .$image. '", "' .$thumb. '", "' .$_POST['cat']. '")');
 					break;
-				
+				case 'events':
+					$name = $_FILES['img']['name'];
+					$instr = fopen($_FILES['img']['tmp_name'] ,"rb");
+					$image = addslashes(fread($instr, filesize($_FILES['img']['tmp_name'])));
+					
+					$mysqli->query('insert into events (img, title, description, date) values ("' .$image. '", "' .$_POST['title']. '", "' .$_POST['description']. '", "' .$_POST['date']. '")');
+					break;
 				default:
 					# code...
 					break;
@@ -108,6 +114,30 @@ class AdminController extends Zend_Controller_Action
 		}
 	
 		$this->view->gallery = $gallery;
+
+
+		// EVENTS
+		$result = $mysqli->query("select * from events order by id desc");
+		$events = array();
+		while ($row = $result->fetch_assoc()) {
+			$id    = $row['id'];
+			$title = htmlspecialchars($row['title']);
+			$img   = $row['img'];
+			$desc  = htmlspecialchars($row['description']);
+			$date  = htmlspecialchars($row['date']);
+
+			$img = 'data:image/jpeg;base64,' .base64_encode($img);
+			
+			$events[$id]['id']            = $id;
+			$events[$id]['title']         = $title;
+			$events[$id]['img']           = $img;
+			$events[$id]['description']   = $desc;
+			$events[$id]['date']          = $date;
+
+		}
+	
+		$this->view->events = $events;
+
 		
     }
 
@@ -130,6 +160,9 @@ class AdminController extends Zend_Controller_Action
 	    		break;
 	    	case 'gallery':
 	    		$mysqli->query("DELETE FROM gallery where id=" . $id);
+	    		break;
+	    	case 'events':
+	    		$mysqli->query("DELETE FROM events where id=" . $id);
 	    		break;
 	    	default:
 	    		

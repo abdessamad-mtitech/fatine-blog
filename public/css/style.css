@@ -97,6 +97,28 @@ body {
  .pics { cursor: pointer !important; margin-bottom: 20px; width: 100%;}
 
 .valider {margin-left: 0px;}
+
+.events h3 {
+    text-align: left;
+    color: #d14e3d;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+.events h5 {
+    font-size: 20px;
+    font-family: bebasneue;
+}
+
+table .remove { background: none;
+    border: 2px solid #fff;
+    padding: 6px 10px;}
+
+
+table .remove:hover {
+    background: #fff !important;
+    color: #d14e3d;
+  }
 /*.navbar-default .navbar-nav > li > a {
     color: #999;
     font-weight: bold;

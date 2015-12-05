@@ -17,7 +17,7 @@ class ContactController extends Zend_Controller_Action
     {
 		$post = $_POST; 
 
-		$to  = 'mtitech.abdessamad@gmail.com';
+		$to  = 'elmehdilaaroussi@mediatuch.com';
 		$subject = $post['subject'];
 
 		$message_body = '<html><body>' .$post['message']. '<br><br> Tel: ' .$post['numtel'].  '</body></html>';
