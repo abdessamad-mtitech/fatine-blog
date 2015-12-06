@@ -34,10 +34,17 @@
 
 <section  class="container container-website col-lg-10 col-lg-offset-1 ">
 	<div class="black-box col-lg-10 col-lg-offset-1 col-xs-12 col-md-10 col-md-offset-1">
+		<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+		<div class="rub">
+			<a href="discographie"><h3 class="col-lg-4 ticket-rub"><span>+ المزيد &nbsp;&nbsp;<img src="images/arrow.png" /></span></h3></a>
+			<h3 class="col-lg-8 col-xs-6  title-rub">موسيقى</h3>
+		</div>
+		<?php } else { ?>
 		<div class="rub">
 			<h3 class="col-lg-8 col-xs-6  title-rub">MUSIQUE</h3>
 			<a href="discographie"><h3 class="col-lg-4 ticket-rub"><span>+ DE MUSIQUE &nbsp;&nbsp;<img src="images/arrow.png" /></span></h3></a>
 		</div>
+		<?php } ?>
 	</div>
 </section>
 <section  class="container container-website col-lg-10 col-lg-offset-1" style="padding: 0px; margin-top:0px;">
@@ -58,10 +65,17 @@
 
 <section  class="container container-website col-lg-10 col-lg-offset-1">
 	<div class="black-box col-lg-10 col-lg-offset-1 col-xs-12 col-md-10 col-md-offset-1">
+		<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+		<div class="rub">
+			<h3 class="col-lg-8 col-xs-6  title-rub">فيديو</h3>
+			<a href="videos"><h3 class="col-lg-4 ticket-rub"><span>+ المزيد &nbsp;&nbsp;<img src="images/arrow.png" /></span></h3></a>
+		</div>
+		<?php } else { ?>
 		<div class="rub">
 			<h3 class="col-lg-8 col-xs-6  title-rub">EN VIDEOS</h3>
 			<a href="videos"><h3 class="col-lg-4 ticket-rub"><span>+ DE VIDEOS &nbsp;&nbsp;<img src="images/arrow.png" /></span></h3></a>
 		</div>
+		<?php } ?>
 	</div>
 </section>
 
@@ -80,10 +94,17 @@
 </section>
 <section  class="container container-website col-lg-10 col-lg-offset-1">
 	<div class="black-box col-lg-10 col-lg-offset-1 col-xs-12 col-md-10 col-md-offset-1">
+		<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+		<div class="rub">
+			<h3 class="col-lg-8 col-xs-6  title-rub">صور</h3>
+			<a href="radios"><h3 class="col-lg-4 ticket-rub"><span>+ المزيد &nbsp;&nbsp;<img src="images/arrow.png" /></span></h3></a>
+		</div>
+		<?php } else { ?>
 		<div class="rub">
 			<h3 class="col-lg-8 col-xs-6  title-rub">EN PHOTOS</h3>
 			<a href="radios"><h3 class="col-lg-4 ticket-rub"><span>+ DE PHOTOS &nbsp;&nbsp;<img src="images/arrow.png" /></span></h3></a>
 		</div>
+		<?php } ?>
 	</div>
 	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="padding: 0px; margin-bottom: 60px;">
 		<?php 
@@ -110,4 +131,22 @@
 	</script>
 </section>
 
+<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+<style type="text/css">
+.ticket-rub {
+    text-align: left;
+    float: left;
+    margin-left: -30px;
+}
 
+.title-rub {
+    text-align: right;
+    margin-right: -30px;
+    float: right;
+}
+
+#main-menu > li > a {
+    font-size: 18px;
+}
+</style>
+<?php } ?>
