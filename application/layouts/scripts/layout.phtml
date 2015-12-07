@@ -40,21 +40,38 @@
 <body>
 	<header>
 		<section class="col-lg-10 col-lg-offset-1 righttoleft">
-			<div>
+			<div class="langue">
 				<a href="?lang=FR-fr">Fr</a>
-				<span>|</span>
 				<a href="?lang=AR-ar">Ar</a>
 			</div>
 		</section>
+		<style>
+		.langue { margin-bottom: 4px; margin-right: -20px;}
+		.langue a { 
+			color: white;
+		    background-color: #d14e3d;
+		    padding: 2px 4px;
+		    text-decoration: none;
+		    border-radius: 3px;
+		    margin-right: 4px;
+		}
+
+		.langue a:hover { 
+			color: white;
+		    background-color: #000;
+		    cursor: pointer;
+		}
+			    
+		</style>
 		<nav class="col-lg-10 col-lg-offset-1 navbar navbar-default modif1">
 	      <div class="container" id="div-title" style="">
 	        <div class="col-lg-12">
 		        <div class="logo-title">
-		        	<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
-		        	<a href="/projects/fatine-blog/public/"><span style="font-family: BebasNeue;">فاتن بنعكيدة</span></a>
-		        	<?php } else { ?>
+		        	<?php //if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+		        	<!-- <a href="/projects/fatine-blog/public/"><span style="font-family: BebasNeue;">فاتن بنعكيدة</span></a> -->
+		        	<?php //} else { ?>
 		        	<a href="/projects/fatine-blog/public/"><span style="font-family: BebasNeue;">FATINE BENAGUIDA</span></a>
-		        	<?php } ?>
+		        	<?php //} ?>
 		        </div>
 		        <div class="navbar-header">
 		          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -64,31 +81,33 @@
 		            <span class="icon-bar"></span>
 		          </button> 
 		        </div>
-		        <div id="navbar" class="navbar-collapse collapse-in collapse col-lg-8 col-lg-offset-2">
-		            <?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
-		            <ul id="main-menu" class="nav navbar-nav " >
-						<li class="<?= $this->contact ?>"><a href="contact?lang=AR-ar">تواصل</a></li>
-						<li><a href="event?lang=AR-ar">احدات</a></li>
-						<li class="parent <?= $this->galerie ?>">
-							<a href="#">صور</a>
-							<ul class="sub-menu">
-								<li>
-									<a class="parent"><i class="icon-file-alt"></i>صور</a>
-									<ul class="sub-menu">
-										<li><a href="radios?lang=AR-ar">تلفزة و راديو</a></li>
-										<li><a href="festivals?lang=AR-ar">حفل</a></li>
-										<li><a href="revues?lang=AR-ar">صحافة</a></li>
-										<li><a href="divers?lang=AR-ar">اخر</a></li>
-									</ul>
-								</li>
-								<li><a href="videos?lang=AR-ar"><i class="icon-wrench"></i>فيديوهات</a></li>
-							</ul>
-						</li>
-						<li class="<?= $this->discographie ?>"><a href="discographie?lang=AR-ar">موسيقى</a></li>
-						<li class="<?= $this->about ?>"><a href="about?lang=AR-ar">تعريفة</a></li>
-						<li class="<?= $this->home ?>"><a href="/projects/fatine-blog/public/?lang=AR-ar">الرئيسية</a></li>
-					</ul>
-					<?php } else { ?>
+		        <?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+			        <div id="navbar" class="navbar-collapse collapse-in collapse col-lg-6 col-lg-offset-3">
+			            <ul id="main-menu" class="nav navbar-nav main-menu-ar" >
+							<li class="<?= $this->contact ?>"><a href="contact?lang=AR-ar">تواصل&nbsp;&nbsp;&nbsp;معنا</a></li>
+							<li><a href="event?lang=AR-ar">أحداث</a></li>
+							<li class="parent <?= $this->galerie ?>">
+								<a href="#">صور</a>
+								<ul class="sub-menu">
+									<li>
+										<a class="parent"><i class="icon-file-alt"></i>صور</a>
+										<ul class="sub-menu">
+											<li><a href="radios?lang=AR-ar"> إذاعة و تلفزة</a></li>
+											<li><a href="festivals?lang=AR-ar">مهرجانات</a></li>
+											<li><a href="revues?lang=AR-ar">صحافة</a></li>
+											<li><a href="divers?lang=AR-ar">آخر</a></li>
+										</ul>
+									</li>
+									<li><a href="videos?lang=AR-ar"><i class="icon-wrench"></i>فيديوهات</a></li>
+								</ul>
+							</li>
+							<li class="<?= $this->discographie ?>"><a href="discographie?lang=AR-ar">موسيقى</a></li>
+							<li class="<?= $this->about ?>"><a href="about?lang=AR-ar">تعريف</a></li>
+							<li class="<?= $this->home ?>"><a href="/projects/fatine-blog/public/?lang=AR-ar">الرئيسية</a></li>
+						</ul>
+					</div><!--/.nav-collapse -->
+				<?php } else { ?>
+				<div id="navbar" class="navbar-collapse collapse-in collapse col-lg-8 col-lg-offset-2">
 					<ul id="main-menu" class="nav navbar-nav " >
 						<li class="<?= $this->home ?>"><a href="/projects/fatine-blog/public/">Accueil</a></li>
 						<li class="<?= $this->about ?>"><a href="about">Biographie</a></li>
@@ -112,9 +131,10 @@
 						<li><a href="event">ÉVÉNEMENTS</a></li>
 						<li class="<?= $this->contact ?>"><a href="contact">Contact</a></li>
 					</ul>
-					<?php } ?>
+				</div><!--/.nav-collapse -->
+				<?php } ?>
 
-		        </div><!--/.nav-collapse -->
+		        
 		       </div>
 	      </div>
 	    </nav>
@@ -126,7 +146,7 @@
 					<div class="row1-footer">
 						<div class="col-lg-6 col-lg-offset-3">
 							<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
-							<p style="color: #000;">© 2015&nbsp; فاتن بنعكيدة. &nbsp;&nbsp;&nbsp;جميع الحقوق محفوظة.&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;انتاج: &nbsp;&nbsp;&nbsp;MEDIA TUCH</p>
+							<p style="color: #000;">جميع الحقوق محفوظة&nbsp;&nbsp;&nbsp;2015&nbsp;&nbsp;&nbsp;فاتن بنعكيدة تصميم&nbsp;&nbsp;&nbsp;MEDIA TUCH</p>
 							<?php } else { ?>
 							<p style="color: #000;">© 2015 fatine benaguida. TOUS DROITS RÉSERVÉS.&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;conçu par : MEDIA TUCH</p>
 							<?php } ?>
@@ -138,8 +158,24 @@
 
 	<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
 		<style>
+			* {
+				font-family: 'DroidKufi-Bold.ttf';
+			}
 			a, p, nav, .righttoleft {
 				direction: rtl !important;
+			}
+
+			.main-menu-ar {margin-left: 0px !important;}
+
+			#main-menu li a { font-size: 20px;}
+
+			ul.sub-menu { right:0px;}
+
+			ul.sub-menu ul.sub-menu { right: 179px;}
+
+			ul.sub-menu > li > a.parent {
+			    background-image: url(images/arrow-ar.png);
+			    background-position: 5% center;
 			}
 		</style>
 	<?php } ?>

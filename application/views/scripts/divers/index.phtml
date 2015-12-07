@@ -1,9 +1,15 @@
 
 <section  class="container container-website col-lg-10 col-lg-offset-1">
 	<div class="black-box col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+		<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
 		<div class="rub">
-			<h3 class="col-lg-12 title-rub">PHOTOS | DIVERS</h3>
+			<h3 class="col-lg-12 title-rub">صور | آخر</h3>
 		</div>
+		<?php } else { ?>
+		<div class="rub">
+			<h3 class="col-lg-12 title-rub">PHOTOS  |  DIVERS</h3>
+		</div>
+		<?php } ?>
 	</div>
 
 	<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1" style="padding: 0px; margin-bottom: 60px;">
@@ -41,4 +47,20 @@
 		    }); 
 		});
 	</script>
+	<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+	<style type="text/css">
+	.ticket-rub {
+	    text-align: left;
+	    float: left;
+	    margin-left: -30px;
+	}
+
+	.title-rub {
+	    text-align: right;
+	    margin-right: -30px;
+	    float: right;
+	}
+
+	</style>
+	<?php } ?>	
 </section>

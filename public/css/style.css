@@ -160,12 +160,21 @@ section.container-slide {width: 84%;}
     
 }
 
+.glyphicon-chevron-left:hover {
+    background: url('../images/arrow-right3.png') no-repeat 12px;
+    
+}
+
 
 .glyphicon-chevron-right::before {
     content: none;
 }
 
 .glyphicon-chevron-right {
+    background: url('../images/arrow-left3.png') no-repeat 16px;
+}
+
+.glyphicon-chevron-right:hover {
     background: url('../images/arrow-right.png') no-repeat 16px;
 }
 /* MARKETING CONTENT
@@ -707,11 +716,20 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
 
 .navigation .owl-next {
   right: 0px;
-  background-image: url('../images/arrow-right1.png');
+  background-image: url('../images/arrow-left2.png');
 }
 
 .navigation .owl-prev {
   background-image: url('../images/arrow-left1.png');
+}
+
+.navigation .owl-next:hover {
+  right: 0px;
+  background-image: url('../images/arrow-right1.png');
+}
+
+.navigation .owl-prev:hover {
+  background-image: url('../images/arrow-right2.png');
 }
 
 #slider {

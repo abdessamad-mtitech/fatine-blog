@@ -1,9 +1,15 @@
 
 <section  class="container container-website col-lg-10 col-lg-offset-1">
 	<div class="black-box col-lg-10 col-lg-offset-1">
+		<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
 		<div class="rub">
-			<h3 class="col-lg-12 title-rub">Evénements</h3>
+			<h3 class="col-lg-12 title-rub">أحداث</h3>
 		</div>
+		<?php } else { ?>
+		<div class="rub">
+			<h3 class="col-lg-12 title-rub">EVENEMENTS</h3>
+		</div>
+		<?php } ?>
 	</div>
 
 	<div class="col-lg-10 col-lg-offset-1 events" style="padding: 0px; margin-bottom: 40px;">
@@ -41,6 +47,22 @@
 	  		</div>
 	  	</div> -->
 	</div>
+	<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+	<style type="text/css">
+	.ticket-rub {
+	    text-align: left;
+	    float: left;
+	    margin-left: -30px;
+	}
+
+	.title-rub {
+	    text-align: right;
+	    margin-right: -30px;
+	    float: right;
+	}
+
+	</style>
+	<?php } ?>	
 </section>
 
 

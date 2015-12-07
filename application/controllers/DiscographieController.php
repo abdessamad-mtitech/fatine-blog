@@ -10,6 +10,7 @@ class DiscographieController extends Zend_Controller_Action
 
     public function indexAction()
     {
+    	$this->view->discographie = 'current-menu-item';
 
     	$errmsg = "";
         $mysqli = new mysqli('127.0.0.1', 'root', '', 'fatine');

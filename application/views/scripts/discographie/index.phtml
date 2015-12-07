@@ -1,9 +1,15 @@
 
 <section  class="container container-website col-lg-10 col-lg-offset-1">
 	<div class="black-box col-lg-10 col-lg-offset-1">
+		<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+		<div class="rub">
+			<h3 class="col-lg-12 title-rub">موسيقى</h3>
+		</div>
+		<?php } else { ?>
 		<div class="rub">
 			<h3 class="col-lg-12 title-rub">DISCOGRAPHIE</h3>
 		</div>
+		<?php } ?>
 
 		
 
@@ -304,3 +310,22 @@
 						      	<h6 style="text-align: justify;"><?= $ref['cat'] ?></h6>
 			        		</div> -->
 </section>
+
+<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
+<style type="text/css">
+.ticket-rub {
+    text-align: left;
+    float: left;
+    margin-left: -30px;
+}
+
+.title-rub {
+    text-align: right;
+    margin-right: -30px;
+    float: right;
+}
+
+
+
+</style>
+<?php } ?>

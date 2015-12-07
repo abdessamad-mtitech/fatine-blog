@@ -18,7 +18,7 @@ class AdminController extends Zend_Controller_Action
 		} 
 
 		$errmsg = "";
-        $mysqli = new mysqli('mediatuckafatine.mysql.db', 'mediatuckafatine', 'Fatine123', 'mediatuckafatine');
+        $mysqli = new mysqli('127.0.0.1', 'root', '', 'fatine');
 		if (!$mysqli ) {
 		        $errmsg = "Cannot connect to database";
 		        }
