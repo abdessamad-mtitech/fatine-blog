@@ -368,6 +368,13 @@ ol, ul {
   margin:0px;
 }
 
+.center-header { text-align: center;}
+.center-header #navbar {
+  float: none;
+  display: inline-block !important;
+  margin: 0px !important;
+}
+
 #main-menu {
   font-size: 0;
   margin: 10px auto;
@@ -922,7 +929,12 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
     width: 100%;
   }
 */
-
+.center-header.arab {text-align: right;}
+.center-header.french {text-align: left;}
+.center-header.french #main-menu li {
+  display: block;
+  margin: 0px;
+}
 
  div#navbar {  height: 470px; background-color: #000;}
 
@@ -930,10 +942,11 @@ ul.produits li span { color: #333; font-size: 12px; text-transform: uppercase;}
 
   div.navbar-header { height: 100px;  }
 
-  #main-menu { float: none;}
+  #main-menu.main-menu-ar { float: none; -webkit-transform: scaleY(-1); -moz-transform: scaleY(-1); transform: scaleY(-1);}
 
-  #main-menu > li {
-    display: inline;
+  #main-menu.main-menu-ar > li {
+    display: block;
+    -webkit-transform: scaleY(-1); -moz-transform: scaleY(-1); transform: scaleY(-1);
   }
 
   #main-menu > li a { padding: 10px 0; }

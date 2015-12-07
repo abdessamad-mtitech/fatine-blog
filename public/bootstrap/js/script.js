@@ -1,5 +1,6 @@
 $(document).ready(function () {
     
+
     $('.owl-carousel-images').owlCarousel({
         items:1,
         merge:true,
