@@ -16,10 +16,10 @@
 	  	
 		<?php foreach ($this->events as $key => $ms) { ?>
 		<div class="col-lg-6 col-xs-12" style="padding: 0px; margin-bottom: 20px;">
-	  		<div class="col-lg-6 col-md-6 col-xs-10">
+	  		<div class="col-lg-6 col-md-6 col-xs-8 col-xs-offset-2">
 	  			<img src="<?= $ms['img'] ?>">
 	  		</div>
-	  		<div class="col-lg-6 col-xs-10">
+	  		<div class="col-lg-6 col-md-6 col-xs-8 col-xs-offset-2">
 	  			<h3><?= $ms['title'] ?></h3>
 	  			<h5><?= $ms['date'] ?></h5>
 	  			<h5><?= $ms['description'] ?></h5>
@@ -49,6 +49,9 @@
 	</div>
 	<?php if (isset($_GET["lang"]) && $_GET["lang"] == "AR-ar" ) { ?>
 	<style type="text/css">
+	h3, .about p {
+	font-family: 'DroidKufi-Bold.ttf';
+	}
 	.ticket-rub {
 	    text-align: left;
 	    float: left;
